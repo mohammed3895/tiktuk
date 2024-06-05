@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kanit } from "next/font/google";
+import Navbar from "@/components/shared/navbar/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const kanit = Kanit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={kanit.className}>
+        <main className="w-full h-dvh overflow-hidden antialiased">
+          <Navbar />
+          {children}
+        </main>
+        <Toaster />
+      </body>
     </html>
   );
 }
