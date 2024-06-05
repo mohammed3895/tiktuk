@@ -10,7 +10,7 @@ const Logo = () => {
         className="text-lg uppercase font-normal text-primary flex items-center justify-center gap-1"
       >
         <GiClockwork className="w-7 h-7" />
-        TickTuk
+        TikTuk
       </Link>
     </div>
   );

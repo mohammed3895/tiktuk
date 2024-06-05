@@ -1,5 +1,11 @@
 import ClockCard from "@/components/shared/clock/ClockCard";
 import axios from "axios";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TikTuk",
+  description: "Time management platform",
+};
 
 async function Home() {
   const data = await axios
