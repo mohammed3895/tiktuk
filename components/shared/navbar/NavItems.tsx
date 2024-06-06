@@ -6,13 +6,13 @@ import Navlink from "./Navlink";
 
 const NavItems = () => {
   return (
-    <div className="flex items-center justify-between gap-3">
-      <div className="flex items-center justify-center gap-3">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="flex items-center justify-center gap-3 flex-col md:flex-row w-full md:w-fit">
         {NAVITEMS.map((item, i) => (
           <Navlink key={i} item={item} />
         ))}
       </div>
-      <div className="w-[380px] py-3 flex gap-3 items-center justify-center">
+      <div className="w-full md:w-[380px] py-3 flex flex-col md:flex-row gap-3 items-center justify-center">
         <AddEvent />
         <AddProject />
       </div>

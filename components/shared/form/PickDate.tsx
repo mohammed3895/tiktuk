@@ -67,9 +67,7 @@ export function PickDate() {
                   onChange={field.onChange}
                 />
               </FormControl>
-              <FormDescription>
-                This name will be displayed as event title.
-              </FormDescription>
+
               <FormMessage />
             </FormItem>
           )}
@@ -109,9 +107,7 @@ export function PickDate() {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Choose a date to add your event to calendar.
-              </FormDescription>
+
               <FormMessage />
             </FormItem>
           )}

@@ -1,14 +1,16 @@
-import Link from "next/link";
 import React from "react";
 import NavItems from "./NavItems";
-import { GiClockwork } from "react-icons/gi";
 import Logo from "./Logo";
+import { MobilNav } from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <div className="w-full py-4 flex items-center justify-center gap-4">
+    <div className="w-full z-20 h-16 p-4 flex justify-between items-center md:justify-center gap-4">
       <Logo />
-      <NavItems />
+      <div className="hidden md:flex">
+        <NavItems />
+      </div>
+      <MobilNav />
     </div>
   );
 };

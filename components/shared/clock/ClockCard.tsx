@@ -1,4 +1,5 @@
 "use client";
+import UserLocation from "@/components/Location";
 import { cn } from "@/lib/utils";
 import moment from "moment";
 import Image from "next/image";
@@ -6,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { FaCloudMoon } from "react-icons/fa6";
 import { IoMdPartlySunny } from "react-icons/io";
 
-const ClockCard = ({ country, flag }: { country: string; flag: string }) => {
+const ClockCard = () => {
   const [date, setDate] = useState<Date>(new Date());
   var hours = date.getHours();
 
@@ -42,16 +43,7 @@ const ClockCard = ({ country, flag }: { country: string; flag: string }) => {
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
         <div className="w-full flex  items-center justify-start gap-1 text-muted-foreground">
-          <Image
-            src={flag}
-            alt=""
-            width={100}
-            height={50}
-            className="w-12 h-6"
-          />
-          <h1 className="text-3xl text-primary font-medium capitalize">
-            {country}
-          </h1>
+          <UserLocation />
         </div>
         <h1 className="text-sm font-normal capitalize text-nowrap">
           {moment(date).format("D MMM YYYY")}
