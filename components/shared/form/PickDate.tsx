@@ -81,20 +81,17 @@ export function PickDate() {
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
-                    <Button
-                      variant={"outline"}
+                    <Input
                       className={cn(
                         "w-full pl-3 text-left font-normal",
                         !field.value && "text-muted-foreground"
                       )}
-                    >
-                      {field.value ? (
-                        format(field.value, "PPP")
-                      ) : (
-                        <span>Pick a date</span>
-                      )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                    </Button>
+                      value={
+                        field.value
+                          ? format(field.value, "PPP").toString()
+                          : "Pick a date"
+                      }
+                    />
                   </FormControl>
                 </PopoverTrigger>
                 <PopoverContent className="w-full p-0" align="start">

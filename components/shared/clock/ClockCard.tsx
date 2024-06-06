@@ -28,7 +28,7 @@ const ClockCard = () => {
     <div
       className={cn(
         "flex flex-col bg-background transition-colors ease-in-out shadow-xl shadow-zinc-400 items-center justify-center gap-5 w-fit text-xl p-8 rounded-lg border",
-        { "bg-neutral-900 text-white border-zinc-800": time === "night" }
+        { "bg-gray-700 text-white border-zinc-800": time === "night" }
       )}
     >
       <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
