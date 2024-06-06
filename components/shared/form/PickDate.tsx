@@ -79,7 +79,7 @@ export function PickDate() {
             <FormItem className="flex flex-col">
               <FormLabel>Choose Date</FormLabel>
               <Popover>
-                <PopoverTrigger asChild>
+                <PopoverTrigger>
                   <FormControl>
                     <Input
                       className={cn(
