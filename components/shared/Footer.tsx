@@ -7,6 +7,7 @@ const Footer = () => {
       Designed and Developed By{"  "}
       <Link
         href="https://www.linkedin.com/in/mohammed-sameer-bb81b3151/"
+        target="_blank"
         className="text-primary"
       >
         Mohammed Sameer
