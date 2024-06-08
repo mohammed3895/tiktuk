@@ -5,7 +5,7 @@ import { TbCalendarStats } from "react-icons/tb";
 export const NAVITEMS = [
   {
     name: "events",
-    href: "events",
+    href: "/events",
     icon: IoCalendarNumber,
   },
 ];

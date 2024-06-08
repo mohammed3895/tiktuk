@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full p-6 flex items-center justify-center text-sm font-normal bg-transparent gap-2">
+    <div className="w-full p-6 flex items-center justify-center text-sm font-normal gap-2">
       Designed and Developed By{"  "}
       <Link
         href="https://www.linkedin.com/in/mohammed-sameer-bb81b3151/"

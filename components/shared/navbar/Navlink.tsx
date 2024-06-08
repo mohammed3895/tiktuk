@@ -9,7 +9,7 @@ interface ItemProps {
 const Navlink = ({ item }: ItemProps) => {
   return (
     <Link
-      href={`/${item.href}`}
+      href={item.href}
       className={cn(
         buttonVariants({ variant: "secondary" }),
         "w-full flex gap-2 capitalize"
