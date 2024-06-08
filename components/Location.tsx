@@ -10,7 +10,6 @@ const getLocation = async () => {
 
   country = data.country;
   city = data.city;
-  console.log(country);
 };
 getLocation();
 

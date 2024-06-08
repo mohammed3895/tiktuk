@@ -20,7 +20,7 @@ async function Home() {
 
   return (
     <div className="w-full h-full flex items-center justify-center app">
-      <div className="w-full h-full flex items-center justify-center  backdrop-blur-md p-4 bg-background/50">
+      <div className="w-full h-full flex items-center justify-center  backdrop-blur-md p-4 bg-background/70">
         <div className="w-full md:w-1/2 p-4 h-full flex flex-col gap-6 items-center justify-center text-center">
           <ClockCard />
           {/* <div className="w-full py-4">

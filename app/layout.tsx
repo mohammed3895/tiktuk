@@ -4,6 +4,7 @@ import Navbar from "@/components/shared/navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Footer from "@/components/shared/Footer";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -24,9 +25,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <ThemeProvider attribute="class">
         <body className={kanit.className}>
-          <main className="w-full h-dvh overflow-hidden antialiased">
+          <main className="w-full h-dvh overflow-hidden antialiased flex flex-col justify-between">
             <Navbar />
             {children}
+            <Footer />
           </main>
           <Toaster />
         </body>

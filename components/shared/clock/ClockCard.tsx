@@ -14,21 +14,16 @@ const ClockCard = () => {
   var hours = date.getHours();
 
   useEffect(() => {
-    function getBg() {
-      if (hours >= 19 || hours <= 5) {
-        // return (time = "night");
-        setTheme("dark");
-      }
-      // return (time = "day");
-      setTheme("light");
+    if (hours >= 19 || hours <= 5) {
+      return () => setTheme("dark");
     }
-    getBg();
+    return () => setTheme("light");
   }, [hours, setTheme]);
 
   return (
     <div
       className={cn(
-        "flex flex-col bg-background transition-colors ease-in-out shadow-xl shadow-zinc-400 items-center justify-center gap-5 w-fit text-xl p-8 rounded-lg border"
+        "flex flex-col bg-background transition-colors ease-in-out shadow-xl dark:shadow-zinc-700 shadow-zinc-400 items-center justify-center gap-5 w-fit text-xl p-8 rounded-lg border"
       )}
     >
       <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
