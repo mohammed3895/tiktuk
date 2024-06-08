@@ -3,6 +3,7 @@ import { Kanit } from "next/font/google";
 import Navbar from "@/components/shared/navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -21,13 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={kanit.className}>
-        <main className="w-full h-dvh overflow-hidden antialiased">
-          <Navbar />
-          {children}
-        </main>
-        <Toaster />
-      </body>
+      <ThemeProvider attribute="class">
+        <body className={kanit.className}>
+          <main className="w-full h-dvh overflow-hidden antialiased">
+            <Navbar />
+            {children}
+          </main>
+          <Toaster />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

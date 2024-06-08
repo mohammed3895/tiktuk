@@ -5,7 +5,7 @@ import { MobilNav } from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <div className="w-full z-20 h-16 p-4 flex justify-between items-center md:justify-center gap-4">
+    <div className="w-full h-16 p-4 flex justify-between items-center md:justify-center gap-4">
       <Logo />
       <div className="hidden md:flex">
         <NavItems />

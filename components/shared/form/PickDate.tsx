@@ -25,12 +25,16 @@ import {
 } from "@/components/ui/popover";
 import { toast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
+import { EVENTS_DATA } from "@/constants/eventData";
 
 const FormSchema = z.object({
-  name: z.string({
+  title: z.string({
     required_error: "Event Name is required.",
   }),
-  dob: z.date({
+  start: z.date({
+    required_error: "A date of birth is required.",
+  }),
+  end: z.date({
     required_error: "A date of birth is required.",
   }),
 });
@@ -41,6 +45,7 @@ export function PickDate() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    // EVENTS_DATA.push(data);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -56,13 +61,13 @@ export function PickDate() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
         <FormField
           control={form.control}
-          name="name"
+          name="title"
           render={({ field }) => (
             <FormItem className="flex flex-col">
               <FormLabel>Event Name</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Event Name"
+                  placeholder="Event Title"
                   className="w-full"
                   onChange={field.onChange}
                 />
@@ -72,43 +77,88 @@ export function PickDate() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="dob"
-          render={({ field }) => (
-            <FormItem className="flex flex-col">
-              <FormLabel>Choose Date</FormLabel>
-              <Popover>
-                <PopoverTrigger>
-                  <FormControl>
-                    <Input
-                      className={cn(
-                        "w-full pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground"
-                      )}
-                      value={
-                        field.value
-                          ? format(field.value, "PPP").toString()
-                          : "Pick a date"
-                      }
+        <div className="flex w-full items-center justify-between gap-3">
+          <FormField
+            control={form.control}
+            name="start"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>Start Date</FormLabel>
+                <Popover>
+                  <PopoverTrigger>
+                    <FormControl>
+                      <Input
+                        className={cn(
+                          "w-full pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
+                        )}
+                        value={
+                          field.value
+                            ? format(field.value, "PPP").toString()
+                            : "Pick a date"
+                        }
+                      />
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    className="w-full p-0 z-[100000]"
+                    align="start"
+                  >
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) => date < new Date("1900-01-01")}
+                      initialFocus
                     />
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-full p-0" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={field.value}
-                    onSelect={field.onChange}
-                    disabled={(date) => date < new Date("1900-01-01")}
-                    initialFocus
-                  />
-                </PopoverContent>
-              </Popover>
+                  </PopoverContent>
+                </Popover>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="end"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>End Date</FormLabel>
+                <Popover>
+                  <PopoverTrigger>
+                    <FormControl>
+                      <Input
+                        className={cn(
+                          "w-full pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
+                        )}
+                        value={
+                          field.value
+                            ? format(field.value, "PPP").toString()
+                            : "Pick a date"
+                        }
+                      />
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    className="w-full p-0 z-[100000]"
+                    align="start"
+                  >
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) => date < new Date("1900-01-01")}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -20,12 +20,12 @@ async function Home() {
 
   return (
     <div className="w-full h-full flex items-center justify-center app">
-      <div className="w-full h-full flex items-center justify-center  backdrop-blur-md z-10 p-4">
+      <div className="w-full h-full flex items-center justify-center  backdrop-blur-md p-4 bg-background/50">
         <div className="w-full md:w-1/2 p-4 h-full flex flex-col gap-6 items-center justify-center text-center">
           <ClockCard />
-          <div className="w-full py-4">
+          {/* <div className="w-full py-4">
             <h1>TickTuk is time management platform</h1>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import { TbLoader2 } from "react-icons/tb";
 
 let country: string;
 let city: string;
@@ -11,16 +12,17 @@ const getLocation = async () => {
   city = data.city;
   console.log(country);
 };
-
 getLocation();
 
 const UserLocation = () => {
   return (
-    <div>
-      {city && (
-        <h1 className="text-3xl text-primary font-medium capitalize">
+    <div className="flex items-center justify-center w-full h-14">
+      {city ? (
+        <h1 className="text-2xl text-primary font-normal capitalize">
           {city} - {country}
         </h1>
+      ) : (
+        <TbLoader2 className="w-5 h-5 animate-spin " />
       )}
     </div>
   );

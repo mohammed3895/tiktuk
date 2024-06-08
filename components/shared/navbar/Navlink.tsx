@@ -1,6 +1,7 @@
+import { buttonVariants } from "@/components/ui/button";
 import { NAVITEMS } from "@/constants/headerItems";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React from "react";
 interface ItemProps {
   item: (typeof NAVITEMS)[number];
 }
@@ -9,9 +10,12 @@ const Navlink = ({ item }: ItemProps) => {
   return (
     <Link
       href={`/${item.href}`}
-      className="flex hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-md items-center justify-center gap-2.5 capitalize"
+      className={cn(
+        buttonVariants({ variant: "secondary" }),
+        "w-full flex gap-2 capitalize"
+      )}
     >
-      <item.icon className="w-5 h-5 text-muted-foreground" />
+      <item.icon className="w-5 h-5 text-primary" />
       {item.name}
     </Link>
   );

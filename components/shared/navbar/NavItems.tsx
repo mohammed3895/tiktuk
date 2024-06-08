@@ -1,20 +1,16 @@
 "use client";
-import AddEvent from "@/components/AddEvent";
-import AddProject from "@/components/AddProject";
 import { NAVITEMS } from "@/constants/headerItems";
 import Navlink from "./Navlink";
+import StopWatch from "../StopWatch";
 
 const NavItems = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-      <div className="flex items-center justify-center gap-3 flex-col md:flex-row w-full md:w-fit">
-        {NAVITEMS.map((item, i) => (
-          <Navlink key={i} item={item} />
+    <div className="w-full md:w-[300px] flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="flex items-start md:items-center md:justify-between justify-start gap-3 flex-col md:flex-row w-full">
+        {NAVITEMS.map((item) => (
+          <Navlink key={item.href} item={item} />
         ))}
-      </div>
-      <div className="w-full md:w-[380px] py-3 flex flex-col md:flex-row gap-3 items-center justify-center">
-        <AddEvent />
-        <AddProject />
+        <StopWatch />
       </div>
     </div>
   );

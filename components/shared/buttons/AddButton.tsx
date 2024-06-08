@@ -32,7 +32,7 @@ const AddButton = ({
       <DialogTrigger>
         <Button
           variant={btnVariant}
-          className="w-full md:w-fit font-normal uppercase"
+          className="w-full md:w-[200px] font-normal capitalize"
         >
           {btnTitle}
         </Button>

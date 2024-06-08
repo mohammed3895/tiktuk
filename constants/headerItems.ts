@@ -8,14 +8,4 @@ export const NAVITEMS = [
     href: "events",
     icon: IoCalendarNumber,
   },
-  {
-    name: "projects",
-    href: "projects",
-    icon: FaBriefcase,
-  },
-  {
-    name: "events",
-    href: "events",
-    icon: TbCalendarStats,
-  },
 ];
